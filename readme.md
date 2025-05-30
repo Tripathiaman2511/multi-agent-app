@@ -1,35 +1,79 @@
-# Multi-Agent with Multi-Clients Demo
+# 🧠 Multi-Agent LLM System
 
-This project demonstrates a simple multi-agent system using multiple LLM (Large Language Model) clients in Python.
+A lightweight multi-agent system in Python that demonstrates collaboration among agents, each powered by a different Large Language Model (LLM) client. This project showcases how multiple AI agents can interact, delegate tasks, and generate insights through inter-agent communication.
 
-## Files
+---
 
-- **agent.py**: Defines agent logic and behavior.
-- **llmclients.py**: Manages connections and interactions with different LLM clients.
+## 🚀 Features
 
-## How It Works
+- 🧩 Modular agent architecture
+- 🔁 Multi-agent communication and collaboration
+- 🤖 Integration with multiple LLM clients (e.g., OpenAI, Claude, Gemini)
+- 📦 Easily extendable for additional agents or tasks
 
-1. **Agents** are created using classes/functions from `agent.py`.
-2. Each agent can be assigned a different LLM client from `llmclients.py`.
-3. Agents interact with each other, each leveraging their respective LLM client for generating responses or actions.
-4. The demo showcases communication, task delegation, or collaboration between agents using multiple LLM backends.
+---
 
-## Usage
+## 📂 Project Structure
 
-```bash
-agent=Agent(model="gemini-2.0-flash", client=GeminiClient())
-agent1=agent.call_with_retry(instruction,context)
+```
+multi-agent-app/
+|- agent.py # Defines Agent class and its behavior
+|- llmclients.py # Abstractions for connecting to various LLMs
+|- main.py # Orchestrates agent creation and execution
+|- README.md
 ```
 
-This will initialize agents, assign LLM clients, and start the demonstration.
+---
 
-## Requirements
+## ⚙️ How It Works
 
-- Python 3.8+
-- Dependencies listed in `requirements.txt`
+Each agent is initialized with a specific LLM client (like GPT-4, Claude, Gemini). These agents can be given individual tasks or work collaboratively on a problem by exchanging responses and augmenting each other’s outputs.
 
-## Customization
+### Example Workflow:
+1. Create multiple agents using different LLM APIs.
+2. Assign a shared goal or problem.
+3. Let agents respond, reference each other’s answers, and refine outputs in a loop.
 
-- Add or modify agents in `agent.py`.
-- Integrate new LLM clients in `llmclients.py`.
+---
+
+## 🛠️ Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Tripathiaman2511/multi-agent-app.git
+   cd multi-agent-app
+2. **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. **Add API Keys**
+   ```env
+   OPENAI_API_KEY=your_openai_key
+   CLAUDE_API_KEY=your_claude_key
+   GEMINI_API_KEY=your_gemini_key
+   ```
+4. **Run the application**
+   ```bash
+   python main.py
+   ```
+
+---
+
+## 🔧 Customization
+
+You can easily add more agents or LLMs by modifying:
+
+1. llmclients.py: Add new client wrappers
+2. main.py: Instantiate additional agents with different roles
+3. agent.py: Add memory, tool use, or agent capabilities
+
+---
+
+## 📌 Use Cases
+1. 🧠 AI task orchestration and brainstorming
+2. 📊 Collaborative summarization or report generation
+3. 🛠️ Auto-documentation or code review bots
+4. 🕵️ Competitive analysis from multiple LLMs
+
+
 
