@@ -17,7 +17,8 @@ This project demonstrates a simple multi-agent system using multiple LLM (Large 
 ## Usage
 
 ```bash
-python agent.py
+agent=Agent(model="gemini-2.0-flash", client=GeminiClient())
+agent1=agent.call_with_retry(instruction,context)
 ```
 
 This will initialize agents, assign LLM clients, and start the demonstration.
