@@ -2,6 +2,15 @@
 
 A lightweight multi-agent system in Python that demonstrates collaboration among agents, each powered by a different Large Language Model (LLM) client. This project showcases how multiple AI agents can interact, delegate tasks, and generate insights through inter-agent communication.
 
+<p align="center">
+  <a href="https://www.linkedin.com/in/aman-tripathi-6ba35a191/">
+    <img src="https://img.shields.io/badge/-Follow%20Aman%20Tripathi-blue?logo=linkedin&style=flat-square" alt="LinkedIn">
+  </a>
+  <a href="https://x.com/Iamtripathi25">
+    <img src="https://img.shields.io/twitter/follow/Iamtripathi25" alt="Twitter">
+  </a>
+</p>
+
 ---
 
 ## 🚀 Features
