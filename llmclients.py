@@ -20,11 +20,27 @@ class LLMCLient(Protocol):
         """
         pass
 
+    def call_with_stream(self, model: str, instructions: str, inputs: str) -> any:
+        """
+        Call the LLM with the given model, instructions, and inputs,
+        returning a stream of responses.
+        """
+        pass
+
 class GeminiClient:
     def __init__(self):
         self.client=genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
     def call(self, model: str, instructions: str, inputs: str) -> any:
+        return self.client.models.generate_content(
+            model=model,
+            contents=inputs,
+            config=types.GenerateContentConfig(
+                system_instruction=instructions
+            ),
+        )
+
+    def call_with_stream(self, model: str, instructions: str, inputs: str) -> any:
         return self.client.models.generate_content_stream(
             model=model,
             contents=inputs,
